@@ -55,7 +55,7 @@ module QuickExport
 
     def initialize(name)
       @name = name
-      @db_config = QuickExport::DB.all_prod_dbs.select { |dbs| dbs.db_host == ENV['__BP_DB_CONFIG'] }[0] || QuickExport::DB.new
+      @db_config = QuickExport::DB.all_prod_dbs.select { |dbs| dbs.db_host == ENV['__DB_CONFIG'] }[0] || QuickExport::DB.new
       #@db_config = QuickExport::DB.new
       account_meta
 
